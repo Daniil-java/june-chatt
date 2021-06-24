@@ -9,9 +9,16 @@
         <TextField promptText="Введите имя пользователя" fx:id="usernameField" HBox.hgrow="ALWAYS" onAction="#tryToAuth"/>
         <Button onAction="#tryToAuth">Подключиться</Button>
     </HBox>
-    <TextArea fx:id="chatArea" editable="false" VBox.vgrow="ALWAYS"/>
+    <HBox VBox.vgrow="ALWAYS">
+        <TextArea fx:id="chatArea" editable="false" HBox.hgrow="ALWAYS"/>
+        <ListView onMouseClicked="#clientsListDoubleClick" fx:id="clientsListView" visible="false" managed="false" minWidth="180" maxWidth="180"/>
+    </HBox>
+
     <HBox fx:id="msgPanel" visible="false" managed="false">
         <TextField promptText="Введите сообщение" fx:id="messageField" HBox.hgrow="ALWAYS" onAction="#sendMessage"/>
         <Button onAction="#sendMessage">Отправить</Button>
+    </HBox>
+    <HBox fx:id="nicknamePanel" visible="false" managed="false">
+        <TextField editable="false" fx:id="nicknameField" HBox.hgrow="ALWAYS"/>
     </HBox>
 </VBox>
